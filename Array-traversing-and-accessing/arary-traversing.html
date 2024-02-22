@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Array traversing</title>
+    <title>Arry Traversing</title>
+    <script>
+
+        let data = [9,45,1,7,73,42,97,21,41];
+
+        // for(let i= 0; i< data.length; i++){
+        //     document.write(`Array ${i} is ${data[i]} <br>`)
+        // // }
+        // let x= 3
+        //     document.write(data[x])
+        function getElement() {
+            // accessing data with validation
+            let el = document.getElementById('element').value;
+            if (!isNaN(el)) { // Check if the input is a valid number
+                el = parseInt(el); // Convert string to number
+                if (el < data.length) {
+                    alert(data[el]);
+                } else {
+                    alert(`There is no data at index ${el}`);
+                }
+            } else {
+                alert('Please enter a number');
+            }
+        }
+
+    </script>
 </head>
-<script>
-    let data = [9, 45, 1, 7, 33, 2, 5, 63, 2];
-    // for(let i = 0; i < data.length; i++){
-    //     document.write(`Array ${[i]} ${data[i]} <br/>`);
-    // }
-
-    // let x = 8;
-    // document.write(data[x]);
-    function getElement() {
-        let el = document.getElementById('element').value;
-        if (el<data.length && typeof parseInt(el) === "number") {
-            alert(data[el]);
-        }
-        else{
-            alert('please enter valid input')
-        }
-    }
-</script>
-
 <body>
-    <input type="text" id="element">
+    <input type="text" name="" id="element">
     <button onclick="getElement()">Get Element</button>
 </body>
-
 </html>
